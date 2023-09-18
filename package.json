@@ -2,7 +2,8 @@
   "name": "com.domain.app.DiagnalDemoApp",
   "description": "Diagnal Demo App",
   "scripts": {
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "start": "lng build && lng serve"
   },
   "dependencies": {
     "@lightningjs/sdk": "^5.4.1"
