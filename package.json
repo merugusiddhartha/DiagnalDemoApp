@@ -6,7 +6,8 @@
     "start": "lng build && lng serve"
   },
   "dependencies": {
-    "@lightningjs/sdk": "^5.4.1"
+    "@lightningjs/sdk": "^5.4.1",
+    "@lightningjs/cli": "^2.12.0"
   },
   "devDependencies": {
     "typescript": "^4.7.4"
