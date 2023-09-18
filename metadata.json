@@ -1,0 +1,6 @@
+{
+  "name": "Diagnal Demo App",
+  "identifier": "com.domain.app.DiagnalDemoApp",
+  "version": "1.0.0",
+  "icon": "./static/icon.png"
+}

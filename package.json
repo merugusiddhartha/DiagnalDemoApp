@@ -1,0 +1,13 @@
+{
+  "name": "com.domain.app.DiagnalDemoApp",
+  "description": "Diagnal Demo App",
+  "scripts": {
+    "tsc": "tsc"
+  },
+  "dependencies": {
+    "@lightningjs/sdk": "^5.4.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
+}
