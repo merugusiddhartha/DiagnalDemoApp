@@ -16,13 +16,13 @@ export class App
   static override _template(): Lightning.Component.Template<AppTemplateSpec> {
     return {
       Background: {
-        w: 1280, h: 720, color: 0xff141414, rect: true, zIndex: -1,
+        w: 1920, h: 1080, color: 0xff141414, rect: true, zIndex: -1,
       },
       Header: {
-        type: Header, w: 1280
+        type: Header, w: 1920
       },
       Content: {
-        type: Content, y: 100, x: 30
+        type: Content, y: 150, x: 30
       }
     }
   }

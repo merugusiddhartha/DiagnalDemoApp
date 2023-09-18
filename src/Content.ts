@@ -21,6 +21,9 @@ function addZeroWidthSpaces(text:any) {
     return text.slice(0, 75) + "\u200B" + text.slice(75) ;
 }
 
+const tileW = 240
+const tileGap = 18
+
 export class Content
   extends Lightning.Component<AppTemplateSpec>
   implements Lightning.Component.ImplementTemplateSpec<AppTemplateSpec>
@@ -40,22 +43,22 @@ export class Content
         return {
             Wrapper: {
                 Title: {
-                    text: { fontStyle: "Bold", text: "Rear Window", fontSize: 32 }
+                    text: { fontStyle: "Bold", text: "Rear Window", fontSize: 40 }
                 },
                 Overview: {
-                    y: 70, text: {
+                    y: 100, text: {
                         maxLines: 2,
                         maxLinesSuffix: "...",
-                        wordWrapWidth: 660,
+                        wordWrapWidth: 960,
                         wordWrap: true,
                         textOverflow: 'ellipsis',
-                        fontSize: 24, fontFace: "Light", lineHeight: 30,
+                        fontSize: 32, fontFace: "Light", lineHeight: 40,
                     }
                 },
                 Content: {
                     Heading: {
-                        y: 180,
-                        text: { text: "Romantic Comedy", fontStyle: "Bold", fontSize: 32 }
+                        y: 250,
+                        text: { text: "Romantic Comedy", fontStyle: "Bold", fontSize: 40 }
                     },
                     List: {
 
@@ -84,15 +87,15 @@ export class Content
         let lastEleX = 0;
         if (lastEle) {
             lastEleX = lastEle.x;
-            lastEleX += (160 + 12)
+            lastEleX += (tileW + tileGap)
         }
 
         const childrens = pageData["content-items"].content.map((item: object, index: number) => {
             return {
                 type: MovieTile,
                 item,
-                x: lastEleX + (index * 160) + (index * 12),
-                y: 240
+                x: lastEleX + (index * tileW) + (index * tileGap),
+                y: 340
             }
         })
         return childrens
@@ -145,13 +148,13 @@ export class Content
 
                 moveRight() {
                     this.List.children.forEach((element: any, index: number) => {
-                        element.x = element.x - 160 - 12
+                        element.x = element.x - tileW - tileGap
                     });
                 }
 
                 moveLeft() {
                     this.List.children.forEach((element: any, index: number) => {
-                        element.x = element.x + 160 + 12
+                        element.x = element.x + tileW + tileGap
                     });
                 }
             }

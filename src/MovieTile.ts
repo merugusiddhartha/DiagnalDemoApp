@@ -10,6 +10,11 @@ interface AppTemplateSpec extends Lightning.Component.TemplateSpec {
     Clock: object
 }
 
+const tileW = 240
+const tileH = (tileW/2)*3
+const focusTextureW = tileW + 3
+const focusTextureH = tileH + 3
+
 export class MovieTile
   extends Lightning.Component<AppTemplateSpec>
   implements Lightning.Component.ImplementTemplateSpec<AppTemplateSpec>
@@ -27,14 +32,14 @@ export class MovieTile
                 alpha: 0,
                 x: -5, y: -5,
                 zIndex: -1,
-                texture: Lightning.Tools.getRoundRect(163, 243, 5, 5, 0xff00ff00, false, null),
+                texture: Lightning.Tools.getRoundRect(focusTextureW, focusTextureH, 5, 5, 0xff00ff00, false, null),
             },
             Content: {
-                w: 160, h: 240, rect: true, shader: { type: Lightning.shaders.RoundedRectangle, radius: 5 }
+                w: tileW, h: tileH, rect: true, shader: { type: Lightning.shaders.RoundedRectangle, radius: 5 }
             },
             Title: {
-                y: 255,
-                text: { fontSize: 16, FontFace: "Light", wordWrapWidth: 160, maxLines: 2, maxLinesSuffix: "...",}
+                y: tileH + 20,
+                text: { fontSize: 24, FontFace: "Light", wordWrapWidth: 240, maxLines: 2, maxLinesSuffix: "...",}
             }
         }
     }

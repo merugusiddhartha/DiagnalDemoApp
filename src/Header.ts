@@ -14,13 +14,13 @@ export class Header
   static override _template(): Lightning.Component.Template<AppTemplateSpec> {
     return {
         Title: {
-            x: 640, y: 50, mount: 0.5,
+            x: 960, y: 50, mount: 0.5,
             text: {
-                text: "LIGHTNING WORKSHOP", fontSize: 22, fontFace: "Light"
+                text: "LIGHTNING WORKSHOP", fontSize: 40, fontFace: "Light"
             }
         },
         Clock: {
-            x: 1250, y: 50, mountY: 0.5, mountX: 1,
+            x: 1850, y: 50, mountY: 0.5, mountX: 1,
             text: { text: "", fontSize: 48, fontFace: "Light", textColor: 0xff747474 }
         }
     }
@@ -31,7 +31,6 @@ export class Header
 
     _timer() {
         Registry.setInterval(() => {
-            //${curTime.getHours()}:${curTime.getMinutes()}
             this.Clock.patch({
                 text: { text: new Date().toTimeString().slice(0, 5) }
             })
