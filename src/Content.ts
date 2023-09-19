@@ -110,11 +110,11 @@ export class Content
                 }
 
                 updateInfo() {
-                    this.Title.patch({ text: { text: this._loadedPagesData[this._activeItemIndex].name } })
+                    this.Title.patch({ smooth:{ text: { text: this._loadedPagesData[this._activeItemIndex].name } } })
                      if(this._loadedPagesData[this._activeItemIndex].description !== undefined) {
-                      this.Overview.patch({ text: addZeroWidthSpaces(this._loadedPagesData[this._activeItemIndex].description) })
+                      this.Overview.patch({ smooth:{ text: addZeroWidthSpaces(this._loadedPagesData[this._activeItemIndex].description) }})
                     } else {
-                      this.Overview.patch({ text: { text: "Information is not available" } })
+                      this.Overview.patch({ smooth:{ text: { text: "Information is not available" } }})
                     }
                   }
 

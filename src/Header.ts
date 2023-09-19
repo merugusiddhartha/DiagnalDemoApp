@@ -31,8 +31,8 @@ export class Header
 
     _timer() {
         Registry.setInterval(() => {
-            this.Clock.patch({
-                text: { text: new Date().toTimeString().slice(0, 5) }
+            this.Clock.patch({ smooth:{
+                text: { text: new Date().toTimeString().slice(0, 5) }}
             })
         }, 1000);
     }

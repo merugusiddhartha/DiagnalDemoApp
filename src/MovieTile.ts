@@ -62,7 +62,7 @@ export class MovieTile
     set item(v:any) {
         this._item = v;
         this.Content.src = Utils.asset(`images/${v['poster-image']}`)
-        this.Title.patch({ text: { text: v.name } })
+        this.Title.patch({ smooth:{ text: { text: v.name } }})
     }
   
 }

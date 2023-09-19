@@ -3,7 +3,7 @@
     "stage": {
       "clearColor": "0x00000000",
       "useImageWorker": true,
-      "precision": 0.666
+      "precision": 0.66666666666
     },
     "debug": true
   },
